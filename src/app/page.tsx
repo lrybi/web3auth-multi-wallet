@@ -140,7 +140,7 @@ const App: NextPage = () => {
               setProviderInUse(providerPhantom);
             }  
 
-            if (!web3authPhantom.connected) {
+            if ((!web3authPhantom.connected) && (web3auth.connected || web3authMetamask.connected)) {
               try {
                 const web3authProviderPhantom = await web3authPhantom.connectTo("phantom");
                 setProviderPhantom(web3authProviderPhantom);
